@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import type { PayloadAction } from '@reduxjs/toolkit'
 
 export type TCounter={
   count:number
@@ -17,7 +17,7 @@ const counterSlice = createSlice({
     decrement: (state) => {
       state.count = state.count - 1;
     },
-    incrementIn5:(state,action)=>{
+    incrementIn5:(state,action:PayloadAction<number>)=>{
       state.count =state.count + action.payload
     }
   },
